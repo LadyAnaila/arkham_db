@@ -1,0 +1,6 @@
+<mat-card class="card-item" (click)="goToDetail(card?.code || '')">
+  <img mat-card-image [src]="card?.imagesrc || 'ruta/a/imagen/default.jpg'" alt="{{ card?.name }}" />
+  <mat-card-title>{{ card?.name }}</mat-card-title>
+  <mat-card-subtitle>{{ card?.pack_name }}</mat-card-subtitle>
+  <p>{{ card?.type_name }} - {{ card?.faction_name }}</p>
+</mat-card>
