@@ -1,0 +1,8 @@
+<div *ngIf="card">
+  <h2>{{ card.name }}</h2>
+  <img [src]="card.imagesrc" alt="{{ card.name }}" />
+</div>
+
+<div *ngIf="!card">
+  <p>Detalles de la carta no encontrados.</p>
+</div>
