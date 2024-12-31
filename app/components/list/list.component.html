@@ -1,9 +1,0 @@
-<div *ngIf="loading" class="loading">Cargando cartas...</div>
-
-<div *ngIf="!loading">
-  <div class="card-grid">
-    <div *ngFor="let card of cards" class="card-item">
-      <app-card [card]="card"></app-card>
-    </div>
-  </div>
-</div>

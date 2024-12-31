@@ -1,8 +1,0 @@
-.spinner-container {
-    position: fixed;      /* Lo fija en la ventana del navegador */
-    top: 50%;             /* Coloca el spinner al 50% desde el borde superior */
-    left: 50%;            /* Coloca el spinner al 50% desde el borde izquierdo */
-    transform: translate(-50%, -50%);  /* Ajusta el spinner para que esté perfectamente centrado */
-    z-index: 1000;        /* Asegura que el spinner esté encima de otros elementos */
-  }
-  
