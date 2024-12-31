@@ -10,6 +10,11 @@ import { GridComponent } from './components/shared/grid/grid.component';
 
 import { HomeComponent } from './components/home/home.component';  
 
+
+import { HeaderComponent } from './components/shared/header/header.component';
+import { FooterComponent } from './components/shared/footer/footer.component'; 
+
+
 import { HttpClientModule } from '@angular/common/http';
 
 
@@ -28,9 +33,9 @@ import { MatIconModule } from '@angular/material/icon';
 import { FormsModule } from '@angular/forms';
 
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner'; 
-import { SpinnerComponent } from './components/shared/spinner/spinner.component'; 
+import { SpinnerComponent } from './components/shared/spinner/spinner.component';
 
-
+import { MatExpansionModule } from  '@angular/material/expansion';
 
 @NgModule({
   declarations: [
@@ -41,16 +46,16 @@ import { SpinnerComponent } from './components/shared/spinner/spinner.component'
     GridComponent,
     HomeComponent,
     SpinnerComponent,
+    HeaderComponent,
+    FooterComponent,
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule, 
-
-    MatButtonModule,
-    MatPaginatorModule,  
+    AppRoutingModule,  
 
     MatTableModule,
     MatCardModule,
+    
     MatButtonModule,
     MatPaginatorModule, 
     MatTabsModule, 
@@ -60,6 +65,8 @@ import { SpinnerComponent } from './components/shared/spinner/spinner.component'
 
     FormsModule,         
     MatProgressSpinnerModule,
+    
+    MatExpansionModule,
 
     HttpClientModule, BrowserAnimationsModule, 
     

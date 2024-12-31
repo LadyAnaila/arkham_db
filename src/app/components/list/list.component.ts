@@ -1,7 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { ApiService } from '../../services/arkham-api.service';
-import { Card } from '../../models/card.model';  // Modelo de la carta
-import { Router } from '@angular/router';  // Para navegación entre rutas
+import { Card } from '../../models/card.model'; 
+import { Router } from '@angular/router';  
 
 @Component({
   selector: 'app-list',

@@ -2,11 +2,13 @@ import { Component, OnInit } from '@angular/core';
 import { ApiService } from '../../services/arkham-api.service';
 import { Card } from '../../models/card.model';
 import { PageEvent } from '@angular/material/paginator';
+import { fadeInOut } from '../../animations';  
 
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
-  styleUrls: ['./home.component.scss']
+  styleUrls: ['./home.component.scss'],
+  animations: [fadeInOut]  
 })
 export class HomeComponent implements OnInit {
   cards: Card[] = [];
@@ -19,7 +21,8 @@ export class HomeComponent implements OnInit {
   constructor(private apiService: ApiService) {}
 
   ngOnInit(): void {
-    setTimeout(() => {
+    setTimeout(() => {  // Retraso de 2 segundos para poder apreciar bien el spinner (en una versión "real" de la aplicación no añadiríamos este retraso). 
+
       this.apiService.getCards().subscribe({
         next: (data: Card[]) => {
           this.cards = data;
@@ -31,8 +34,8 @@ export class HomeComponent implements OnInit {
           this.loading = false;
         }
       });
-    }, 2000);  // Retraso de 2 segundos para poder apreciar bien el spinner (en una versión "real" de la aplicación no añadiríamos este retraso). 
-  }
+    }, 2000); 
+    }
 
   updatePagination(): void {
     const start = this.pageIndex * this.pageSize;

@@ -6,16 +6,13 @@ import { Observable } from 'rxjs';
   providedIn: 'root'  
 })
 export class ApiService {
-  private apiUrl = '/api/public';  // Asegúrate de que esta URL es la correcta para la API.
+  private apiUrl = '/api/public';  
 
   constructor(private http: HttpClient) { }
-
-  // Método para obtener todas las cartas
   getCards(): Observable<any> {
     return this.http.get<any>(`${this.apiUrl}/cards`);
   }
 
-  // Método para obtener los detalles de una carta por su código
   getCardDetail(cardCode: string): Observable<any> {
     return this.http.get<any>(`${this.apiUrl}/card/${cardCode}`);
   }

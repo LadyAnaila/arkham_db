@@ -1,8 +1,27 @@
-<div *ngIf="card">
-  <h2>{{ card.name }}</h2>
-  <img [src]="card.imagesrc" alt="{{ card.name }}" />
-</div>
+<div class="card-detail-container">
+  <div class="header">
+    <h2>{{ card?.name }}</h2>
+    <button mat-raised-button color="primary" (click)="goBack()" class="back-button">Back</button>
+  </div>
 
-<div *ngIf="!card">
-  <p>Detalles de la carta no encontrados.</p>
+  <img *ngIf="card?.imagesrc" [src]="card?.imagesrc" alt="{{ card?.name }}" class="card-image" />
+
+  <button mat-raised-button color="primary" (click)="toggleDetails()" class="details-toggle">
+    {{ isExpanded ? 'Hide Details' : 'Show All Details' }}
+  </button>
+
+  <!-- DETALLES -->
+  <mat-accordion>
+    <mat-expansion-panel [expanded]="isExpanded">
+      <mat-expansion-panel-header>
+        <mat-panel-title> Card Details </mat-panel-title>
+      </mat-expansion-panel-header>
+
+      <p><strong>Pack:</strong> {{ card?.pack_name }}</p>
+      <p><strong>Type:</strong> {{ card?.type_name }}</p>
+      <p><strong>Faction:</strong> {{ card?.faction_name }}</p>
+      <p><strong>Description:</strong></p>
+      <p>{{ card?.text }}</p>
+    </mat-expansion-panel>
+  </mat-accordion>
 </div>
